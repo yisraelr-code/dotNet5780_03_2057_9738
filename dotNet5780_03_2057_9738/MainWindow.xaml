@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dotNet5780_03_2057_9738"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="האחוזה של ישראל ואוריה" Height="640" Width="800">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <Grid Name="UpGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Name="cbHostList" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" SelectionChanged="cbHostList_SelectionChanged"/>
+            <TextBlock Name="tbHostName" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1" Text="{Binding Path=HostUnit}"/>
+        </Grid>
     </Grid>
 </Window>
